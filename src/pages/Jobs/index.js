@@ -1,12 +1,13 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
-import Navigation from './../../components/Navigation';
-import BrowseJobs from './../../components/BrowseJobs';
-import JobItem from './../../components/JobItem';
-import Pagination from './../../components/Pagination';
-import Footer from './../../components/Footer';
+import Navigation from "./../../components/Navigation";
+import BrowseJobs from "./../../components/BrowseJobs";
+import JobItem from "./../../components/JobItem";
+import Pagination from "./../../components/Pagination";
+import Footer from "./../../components/Footer";
 
-import jobs from './../../assets/data/jobs.json';
+import jobs from "./../../assets/data/jobs.json";
 
 const JobsList = () => (
   <div className="nav-on-header smart-nav bg-alt">
@@ -18,9 +19,9 @@ const JobsList = () => (
       <section className="no-padding-top">
         <div className="container">
           <div className="row">
-            {
-              jobs.map(job => <JobItem key={job.id} job={job} />)
-            }
+            {jobs.map((job) => (
+              <JobItem key={job.id} job={job} />
+            ))}
           </div>
           <Pagination />
         </div>

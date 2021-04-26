@@ -34,5 +34,14 @@
     "rate": "$70 per hour",
     "applied": "Apr 15, 2021",
     "image": "/img/avatar-4.jpg"
+  },
+  {
+    "id": "5",
+    "name": "Daniela Calle",
+    "title": "Senior Technology Risk",
+    "location": "Medellín, CO",
+    "rate": "$100 per hour",
+    "applied": "Apr 25, 2021",
+    "image": "/img/avatar-4.jpg"
   }
 ]
