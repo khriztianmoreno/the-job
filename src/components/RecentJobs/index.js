@@ -39,7 +39,7 @@ const RecentJobs = () => (
 
         {
           jobs.map(job => (
-            <div className="col-xs-12">
+            <div key={job.id} className="col-xs-12">
               <a className="item-block" href="/">
                 <header>
                   <img src={job.image} alt={job.title} />
