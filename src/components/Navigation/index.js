@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Navigation extends Component {
   constructor() {
@@ -13,7 +13,7 @@ class Navigation extends Component {
   }
 
   verifyLogin() {
-    const user = JSON.parse(localStorage.getItem('user'));
+    const user = JSON.parse(localStorage.getItem("user"));
     if (user && user.name) {
       this.setState({ isAuth: true });
     }
@@ -36,7 +36,9 @@ class Navigation extends Component {
             </div>
           </div>
           <div className="pull-right user-login">
-            <Link to="/login" className="btn btn-sm btn-primary">login</Link>
+            <Link to="/login" className="btn btn-sm btn-primary">
+              login
+            </Link>
             or <Link to="/register">register</Link>
           </div>
           <ul className="nav-menu">
@@ -46,16 +48,26 @@ class Navigation extends Component {
             <li>
               <a href="/jobs">Position</a>
               <ul>
-                <li><Link to="/jobs">Browse jobs</Link></li>
-                <li><Link to="/jobs/detail/1020">Job detail</Link></li>
-                <li><Link to="/jobs/apply/1020">Apply for job</Link></li>
+                <li>
+                  <Link to="/jobs">Browse jobs</Link>
+                </li>
+                <li>
+                  <Link to="/jobs/detail/1020">Job detail</Link>
+                </li>
+                <li>
+                  <Link to="/jobs/apply/1020">Apply for job</Link>
+                </li>
                 {/* {
                   this.state.isAuth && (
                     <li><Link to="/jobs/create">Post a job</Link></li>
                   )
                 } */}
-                <li><Link to="/jobs/create">Post a job</Link></li>
-                <li><Link to="/candidates">Candidates</Link></li>
+                <li>
+                  <Link to="/jobs/create">Post a job</Link>
+                </li>
+                <li>
+                  <Link to="/candidates">Candidates</Link>
+                </li>
               </ul>
             </li>
           </ul>
