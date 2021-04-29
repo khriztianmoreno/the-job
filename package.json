@@ -27,6 +27,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "dev": "run-p -l start db:fake",
     "db:fake": "json-server --watch db.json --routes routes.json --port 3004"
   },
   "eslintConfig": {
@@ -50,6 +51,7 @@
   "devDependencies": {
     "eslint": "^7.25.0",
     "eslint-plugin-react": "^7.23.2",
-    "node-sass": "^5.0.0"
+    "node-sass": "^5.0.0",
+    "npm-run-all": "^4.1.5"
   }
 }
