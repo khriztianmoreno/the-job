@@ -1,20 +1,7 @@
+const loginAccount = () => {};
 
+const registerAccount = () => {};
 
-const loginAccount = () => {
+const forgotPassword = () => {};
 
-}
-
-const registerAccount = () => {
-
-}
-
-const forgotPassword = () => {
-
-}
-
-
-export {
-  forgotPassword,
-  loginAccount,
-  registerAccount,
-}
+export { forgotPassword, loginAccount, registerAccount };
