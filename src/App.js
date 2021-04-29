@@ -13,46 +13,14 @@ import BrowseJobs from './pages/Jobs/';
 const App = () => (
   <BrowserRouter>
     <Switch>
-      <Route
-        path="/"
-        exact
-        component={Home}
-      />
-      <Route
-        path="/jobs"
-        exact
-        component={BrowseJobs}
-      />
-      <Route
-        path="/jobs/create"
-        exact
-        component={AddJob}
-      />
-      <Route
-        path="/jobs/detail/:id"
-        exact
-        component={DetailJob}
-      />
-      <Route
-        path="/jobs/apply/:id"
-        exact
-        component={ApplyJob}
-      />
-      <Route
-        path="/candidates"
-        exact
-        component={Candidates}
-      />
-      <Route
-        path="/login"
-        exact
-        component={Login}
-      />
-      <Route
-        path="/register"
-        exact
-        component={Register}
-      />
+      <Route path="/" exact component={Home} />
+      <Route path="/jobs" exact component={BrowseJobs} />
+      <Route path="/jobs/create" exact component={AddJob} />
+      <Route path="/jobs/detail/:id" exact component={DetailJob} />
+      <Route path="/jobs/apply/:id" exact component={ApplyJob} />
+      <Route path="/candidates" exact component={Candidates} />
+      <Route path="/login" exact component={Login} />
+      <Route path="/register" exact component={Register} />
     </Switch>
   </BrowserRouter>
 );
