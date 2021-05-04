@@ -4,6 +4,15 @@ import { faBars } from '@fortawesome/fontawesome-free-solid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Navigation = () => {
+  const localUser = localStorage.getItem('THE_JOB_APP');
+  const user = localUser ? JSON.parse(localUser) : null;
+
+  const handleLogout = () => {
+    localStorage.removeItem('THE_JOB_APP');
+  };
+
+  console.log(111);
+
   return (
     <nav className="navbar">
       <div className="container">
@@ -21,8 +30,24 @@ const Navigation = () => {
           </div>
         </div>
         <div className="pull-right user-login">
-          <Link to="/login" className="btn btn-sm btn-primary">login</Link>
-          or <Link to="/register">register</Link>
+          {user ? (
+            <>
+              <Link to="/login" className="btn btn-sm btn-primary">
+                {user.name}
+              </Link>
+              or
+              <button type="button" className="btn" onClick={handleLogout}>
+                logout
+              </button>
+            </>
+          ) : (
+            <>
+              <Link to="/login" className="btn btn-sm btn-primary">
+                login
+              </Link>
+              or <Link to="/register">register</Link>
+            </>
+          )}
         </div>
         <ul className="nav-menu">
           <li>
@@ -31,22 +56,32 @@ const Navigation = () => {
           <li>
             <a href="/jobs">Position</a>
             <ul>
-              <li><Link to="/jobs">Browse jobs</Link></li>
-              <li><Link to="/jobs/detail/1020">Job detail</Link></li>
-              <li><Link to="/jobs/apply/1020">Apply for job</Link></li>
+              <li>
+                <Link to="/jobs">Browse jobs</Link>
+              </li>
+              <li>
+                <Link to="/jobs/detail/1020">Job detail</Link>
+              </li>
+              <li>
+                <Link to="/jobs/apply/1020">Apply for job</Link>
+              </li>
               {/* {
                 this.state.isAuth && (
                   <li><Link to="/jobs/create">Post a job</Link></li>
                 )
               } */}
-              <li><Link to="/jobs/create">Post a job</Link></li>
-              <li><Link to="/candidates">Candidates</Link></li>
+              <li>
+                <Link to="/jobs/create">Post a job</Link>
+              </li>
+              <li>
+                <Link to="/candidates">Candidates</Link>
+              </li>
             </ul>
           </li>
         </ul>
       </div>
     </nav>
-  )
-}
+  );
+};
 
 export default Navigation;

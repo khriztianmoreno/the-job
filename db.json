@@ -222,7 +222,38 @@
   "users": [
     {
       "id": 1020,
-      "name": "Cristian"
+      "email": "k@mz.com",
+      "name": "khriztian",
+      "password": "12345",
+      "role": "manager"
+    },
+    {
+      "name": "Daniela",
+      "email": "dani@lo.com",
+      "password": "12345",
+      "role": "candidate",
+      "id": 1021
+    },
+    {
+      "name": "Camilo",
+      "email": "camilo@lo.com",
+      "password": "12345",
+      "role": "candidate",
+      "id": 1022
+    },
+    {
+      "name": "Isabella",
+      "email": "isa@lo.com",
+      "password": "12345",
+      "role": "candidate",
+      "id": 1023
+    },
+    {
+      "name": "Maria",
+      "email": "maria@lolo.com",
+      "password": "1234",
+      "role": "candidate",
+      "id": 1024
     }
   ]
 }
