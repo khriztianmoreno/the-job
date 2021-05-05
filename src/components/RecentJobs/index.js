@@ -37,7 +37,7 @@ const RecentJobs = () => (
       <div className="row item-blocks-connected">
         {jobs.map(job => (
           <div key={job.id} className="col-xs-12">
-            <a className="item-block" href="/">
+            <Link className="item-block" to={`/jobs/detail/${job.id}`}>
               <header>
                 <img src={job.image} alt={job.title} />
                 <div className="hgroup">
@@ -51,7 +51,7 @@ const RecentJobs = () => (
                   </span>
                 </div>
               </header>
-            </a>
+            </Link>
           </div>
         ))}
       </div>
