@@ -11,8 +11,6 @@ const Navigation = () => {
     localStorage.removeItem('THE_JOB_APP');
   };
 
-  console.log(111);
-
   return (
     <nav className="navbar">
       <div className="container">
