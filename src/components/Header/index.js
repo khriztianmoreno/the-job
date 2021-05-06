@@ -13,7 +13,7 @@ Header.defaultProps = {
 };
 
 Header.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   className: PropTypes.string,
   backgroundImage: PropTypes.string,
 };
