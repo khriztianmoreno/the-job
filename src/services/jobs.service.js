@@ -16,7 +16,11 @@ const getJob = async id => {
     const resp = await fetch(`${API_URL_BASE}/api/jobs/${id}`);
     const job = await resp.json();
 
-    return job;
+    if (job && job.id) {
+      return job;
+    }
+
+    return null;
   } catch (error) {
     throw Error('Ohhps');
   }

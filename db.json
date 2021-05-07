@@ -40,7 +40,7 @@
   "jobs": [
     {
       "id": "1020",
-      "title": "Senior front-end developer",
+      "title": "Senior frontEnd developer",
       "company": "Google",
       "image": "/img/logo-google.jpg",
       "about": "You will help Google build next-generation web applications like Gmail, Google Docs, Google Analytics, and the Google eBookstore and eBook readers. As a Front End Engineer at Google, you will specialize in building responsive and elegant web UIs with AJAX and similar technologies. You may design or work on frameworks for building scalable frontend applications. We are looking for engineers who are passionate about and have experience building leading-edge user experience, including dynamic consumer experiences",
@@ -72,7 +72,27 @@
         "Knowledge of user interface design."
       ],
       "ago": "34 min ago",
-      "className": "label-success"
+      "className": "label-success",
+      "canditates": [
+        {
+          "id": "1",
+          "name": "John Doe",
+          "title": "Front-end developer",
+          "location": "Menlo park, CA",
+          "rate": "$55 per hour",
+          "applied": "Apr 15, 2018",
+          "image": "/img/avatar-1.jpg"
+        },
+        {
+          "id": "2",
+          "name": "John Doe",
+          "title": "Front-end developer",
+          "location": "Menlo park, CA",
+          "rate": "$55 per hour",
+          "applied": "Apr 15, 2018",
+          "image": "/img/avatar-1.jpg"
+        }
+      ]
     },
     {
       "id": "1030",
