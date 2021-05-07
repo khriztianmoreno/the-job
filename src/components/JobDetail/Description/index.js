@@ -80,7 +80,7 @@ const JobDescription = props => {
             <Link className="btn btn-primary" to="/">
               Apply with linkedin
             </Link>
-            <Link className="btn btn-success" to="/jobs/apply/1020">
+            <Link className="btn btn-success" to={`/jobs/apply/${job.id}`}>
               Apply now
             </Link>
           </div>

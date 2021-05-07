@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import Header from './Header';
-import Main from './Form';
+import Form from './Form';
 
 import { getJob } from '../../services/jobs.service';
 
@@ -23,7 +23,7 @@ const ApplyJob = () => {
     <div>
       {jobDetail ? <Header job={jobDetail} /> : null}
 
-      <Main />
+      <Form />
     </div>
   );
 };

@@ -4,6 +4,12 @@ import { Link } from 'react-router-dom';
 
 const Header = ({ job }) => {
   const { company, image, location, ago, title, id } = job;
+
+  const scrollTo = () => {
+    document
+      .getElementById('sec-custom')
+      .scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <header
       className="page-header bg-img size-lg"
@@ -33,9 +39,13 @@ const Header = ({ job }) => {
 
         <div className="button-group">
           <div className="action-buttons">
-            <a className="btn btn-primary" href="#sec-resume">
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={scrollTo}
+            >
               Apply now
-            </a>
+            </button>
           </div>
         </div>
       </div>
