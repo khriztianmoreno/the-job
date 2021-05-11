@@ -73,24 +73,12 @@
       ],
       "ago": "34 min ago",
       "className": "label-success",
-      "canditates": [
+      "candidates": [
         {
-          "id": "1",
-          "name": "John Doe",
-          "title": "Front-end developer",
-          "location": "Menlo park, CA",
-          "rate": "$55 per hour",
-          "applied": "Apr 15, 2018",
-          "image": "/img/avatar-1.jpg"
-        },
-        {
-          "id": "2",
-          "name": "John Doe",
-          "title": "Front-end developer",
-          "location": "Menlo park, CA",
-          "rate": "$55 per hour",
-          "applied": "Apr 15, 2018",
-          "image": "/img/avatar-1.jpg"
+          "name": "mafe",
+          "email": "mafe@lo.com",
+          "role": "candidate",
+          "id": 1025
         }
       ]
     },
@@ -274,6 +262,13 @@
       "password": "1234",
       "role": "candidate",
       "id": 1024
+    },
+    {
+      "name": "mafe",
+      "email": "mafe@lo.com",
+      "password": "12345",
+      "role": "candidate",
+      "id": 1025
     }
   ]
 }

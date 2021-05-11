@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -7,17 +7,12 @@ import {
   faUser,
 } from '@fortawesome/fontawesome-free-solid';
 
+import useForm from '../../../hooks/useForm';
 import { registerAccount } from '../../../services/auth.services';
 
 const FormRegister = () => {
-  const [form, setForm] = useState({});
+  const { form, handleChange } = useForm({});
   const history = useHistory();
-
-  const handleInput = ({ target }) => {
-    const { name, value } = target;
-
-    setForm({ ...form, [name]: value });
-  };
 
   const handleSubmit = async evt => {
     evt.preventDefault();
@@ -82,7 +77,7 @@ const FormRegister = () => {
             type="text"
             className="form-control"
             placeholder="Your name"
-            onChange={handleInput}
+            onChange={handleChange}
             required
           />
         </div>
@@ -101,7 +96,7 @@ const FormRegister = () => {
             name="email"
             className="form-control"
             placeholder="Email"
-            onChange={handleInput}
+            onChange={handleChange}
             required
           />
         </div>
@@ -121,7 +116,7 @@ const FormRegister = () => {
             className="form-control"
             placeholder="Password"
             minLength={4}
-            onChange={handleInput}
+            onChange={handleChange}
             required
           />
         </div>

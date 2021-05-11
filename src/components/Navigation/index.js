@@ -34,7 +34,11 @@ const Navigation = () => {
                 {user.name}
               </Link>
               or
-              <button type="button" className="btn" onClick={handleLogout}>
+              <button
+                type="button"
+                className="btn btn-default"
+                onClick={handleLogout}
+              >
                 logout
               </button>
             </>

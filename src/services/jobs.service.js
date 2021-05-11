@@ -26,8 +26,33 @@ const getJob = async id => {
   }
 };
 
+/**
+ * Register an applicant for a job
+ * @param {Object} job
+ * @returns
+ */
+const registerApplicant = async job => {
+  try {
+    const payload = {
+      method: 'PUT',
+      body: JSON.stringify(job),
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+    };
+
+    const response = await fetch(`${API_URL_BASE}/api/jobs/${job.id}`, payload);
+    const newJob = await response.json();
+
+    return newJob;
+  } catch (err) {
+    throw Error(err);
+  }
+};
+
 const createJob = job => {
   return job;
 };
 
-export { getAllJobs, getJob, createJob };
+export { getAllJobs, getJob, createJob, registerApplicant };

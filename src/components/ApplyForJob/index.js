@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import Header from './Header';
 import Form from './Form';
 
-import { getJob } from '../../services/jobs.service';
+import { getJob, registerApplicant } from '../../services/jobs.service';
 
 const ApplyJob = () => {
   const [jobDetail, setJobDetail] = useState(null);
@@ -15,6 +15,25 @@ const ApplyJob = () => {
     setJobDetail(job);
   };
 
+  const updateJobWithApplicant = async saveJob => {
+    try {
+      await registerApplicant(saveJob);
+      alert('Thank you for applying');
+    } catch (error) {
+      alert('Error');
+      throw Error('something went wrong');
+    }
+  };
+
+  const getApplicant = applicant => {
+    const { candidates = [] } = jobDetail;
+    const saveApplicant = {
+      ...jobDetail,
+      candidates: [...candidates, applicant],
+    };
+    updateJobWithApplicant(saveApplicant);
+  };
+
   useEffect(() => {
     getJobDetail();
   }, [id]);
@@ -23,7 +42,7 @@ const ApplyJob = () => {
     <div>
       {jobDetail ? <Header job={jobDetail} /> : null}
 
-      <Form />
+      <Form handleApply={getApplicant} />
     </div>
   );
 };
