@@ -1,23 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import Header from './Header';
 import Form from './Form';
 
-import { getJob, registerApplicant } from '../../services/jobs.service';
+import { getJobDetail, createApplicantToJob } from '../../context/actions';
+import { useAppState, useAppDispatch } from '../../context/store';
 
 const ApplyJob = () => {
-  const [jobDetail, setJobDetail] = useState(null);
+  const dispatch = useAppDispatch();
+  const { jobDetail } = useAppState();
   const { id } = useParams();
-
-  const getJobDetail = async () => {
-    const job = await getJob(id);
-    setJobDetail(job);
-  };
 
   const updateJobWithApplicant = async saveJob => {
     try {
-      await registerApplicant(saveJob);
+      await createApplicantToJob(dispatch, saveJob);
       alert('Thank you for applying');
     } catch (error) {
       alert('Error');
@@ -35,7 +32,7 @@ const ApplyJob = () => {
   };
 
   useEffect(() => {
-    getJobDetail();
+    getJobDetail(dispatch, id);
   }, [id]);
 
   return (

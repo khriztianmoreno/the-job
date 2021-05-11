@@ -54,6 +54,7 @@ const Form = props => {
                 className="form-control"
                 rows="5"
                 placeholder="Message"
+                name="message"
                 onChange={handleChange}
               />
             </div>
