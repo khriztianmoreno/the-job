@@ -79,6 +79,13 @@
           "email": "mafe@lo.com",
           "role": "candidate",
           "id": 1025
+        },
+        {
+          "name": "mafe",
+          "email": "mafe@lo.com",
+          "role": "candidate",
+          "id": 1025,
+          "message": "Hola amigos"
         }
       ]
     },

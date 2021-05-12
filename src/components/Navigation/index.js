@@ -36,7 +36,7 @@ const Navigation = () => {
               or
               <button
                 type="button"
-                className="btn btn-default"
+                className="btn btn-sm btn-secondary"
                 onClick={handleLogout}
               >
                 logout

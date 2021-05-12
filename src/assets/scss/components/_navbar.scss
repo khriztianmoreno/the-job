@@ -233,14 +233,21 @@
   font-size: 13px;
   color: #eee;
 
-  a,
-  button {
+  a {
     color: #fff;
     opacity: 0.6;
     transition: opacity 0.3s ease-in-out;
     &:hover {
       color: #fff;
       opacity: 1;
+    }
+  }
+
+  button.btn.btn-sm.btn-secondary {
+    background-color: transparent;
+
+    &:hover {
+      text-decoration: underline;
     }
   }
 
