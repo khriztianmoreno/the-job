@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import { faBars } from '@fortawesome/fontawesome-free-solid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import { useAppState } from '../../context/store';
+
 const Navigation = () => {
-  const localUser = localStorage.getItem('THE_JOB_APP');
-  const user = localUser ? JSON.parse(localUser) : null;
+  const { user } = useAppState();
 
   const handleLogout = () => {
     localStorage.removeItem('THE_JOB_APP');

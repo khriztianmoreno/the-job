@@ -4,20 +4,21 @@ import { Link } from 'react-router-dom';
 
 const JobItem = ({ job }) => (
   <div className="col-xs-12">
-    <Link className="item-block" to={`/jobs/detail/${job.id}`}>
+    <Link className="item-block" to={`/jobs/detail/${job._id}`}>
       <header>
         <img src={job.image} alt="logo" />
         <div className="hgroup">
           <h4>{job.title}</h4>
-          <h5>{job.company} <span className={`label ${job.className}`}>{job.type}</span></h5>
+          <h5>
+            {job.company}{' '}
+            <span className={`label ${job.className}`}>{job.type}</span>
+          </h5>
         </div>
         <time>{job.ago}</time>
       </header>
 
       <div className="item-body">
-        <p>
-          {job.summary}
-        </p>
+        <p>{job.summary}</p>
       </div>
 
       <footer>
@@ -44,7 +45,7 @@ const JobItem = ({ job }) => (
 
 JobItem.defaultProps = {
   job: {
-    id: '',
+    _id: '',
     title: '',
     company: '',
     type: '',
@@ -58,10 +59,9 @@ JobItem.defaultProps = {
   },
 };
 
-
 JobItem.propTypes = {
   job: PropTypes.shape({
-    id: PropTypes.string,
+    _id: PropTypes.string,
     title: PropTypes.string,
     company: PropTypes.string,
     type: PropTypes.string,
