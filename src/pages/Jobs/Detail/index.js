@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import Navigation from './../../../components/Navigation';
@@ -7,19 +7,16 @@ import JobDetail from './../../../components/JobDetail';
 import Description from './../../../components/JobDetail/Description';
 import Footer from './../../../components/Footer';
 
-import { getJob } from '../../../services/jobs.service';
+import { getJobDetail } from '../../../context/actions';
+import { useAppState, useAppDispatch } from '../../../context/store';
 
 const DetailJob = () => {
-  const [jobData, setJobData] = useState(null);
+  const dispatch = useAppDispatch();
+  const { jobDetail: jobData } = useAppState();
   const { id } = useParams();
 
-  const getJobData = async () => {
-    const job = await getJob(id);
-    setJobData(job);
-  };
-
   useEffect(() => {
-    getJobData();
+    getJobDetail(dispatch, id);
   }, [id]);
 
   return (

@@ -1,21 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import jobs from './../../assets/data/jobs.json';
+import { getJobs } from '../../context/actions';
+import { useAppState, useAppDispatch } from '../../context/store';
 
 const classNameType = name => {
   let className = '';
   switch (name) {
-    case 'Full time':
+    case 'full time':
       className = 'label-success';
       break;
-    case 'Part time':
+    case 'part time':
       className = 'label-warning';
       break;
-    case 'Freelance':
+    case 'freelance':
       className = 'label-info';
       break;
-    case 'Internship':
+    case 'internship':
       className = 'label-danger';
       break;
     default:
@@ -26,45 +27,54 @@ const classNameType = name => {
   return className;
 };
 
-const RecentJobs = () => (
-  <section>
-    <div className="container">
-      <header className="section-header">
-        <span>Latest</span>
-        <h2>Recent jobs</h2>
-      </header>
+const RecentJobs = () => {
+  const dispatch = useAppDispatch();
+  const { jobs } = useAppState();
 
-      <div className="row item-blocks-connected">
-        {jobs.map(job => (
-          <div key={job.id} className="col-xs-12">
-            <Link className="item-block" to={`/jobs/detail/${job.id}`}>
-              <header>
-                <img src={job.image} alt={job.title} />
-                <div className="hgroup">
-                  <h4>{job.title} </h4>
-                  <h5>{job.company} </h5>
-                </div>
-                <div className="header-meta">
-                  <span className="location">{job.location}</span>
-                  <span className={`label ${classNameType(job.type)}`}>
-                    {job.type}
-                  </span>
-                </div>
-              </header>
-            </Link>
-          </div>
-        ))}
+  useEffect(() => {
+    getJobs(dispatch);
+  }, []);
+
+  return (
+    <section>
+      <div className="container">
+        <header className="section-header">
+          <span>Latest</span>
+          <h2>Recent jobs</h2>
+        </header>
+
+        <div className="row item-blocks-connected">
+          {jobs.map(job => (
+            <div key={job._id} className="col-xs-12">
+              <Link className="item-block" to={`/jobs/detail/${job._id}`}>
+                <header>
+                  <img src={job.image} alt={job.title} />
+                  <div className="hgroup">
+                    <h4>{job.title} </h4>
+                    <h5>{job.company} </h5>
+                  </div>
+                  <div className="header-meta">
+                    <span className="location">{job.location}</span>
+                    <span className={`label ${classNameType(job.type)}`}>
+                      {job.type}
+                    </span>
+                  </div>
+                </header>
+              </Link>
+            </div>
+          ))}
+        </div>
+
+        <br />
+        <br />
+        <p className="text-center">
+          <Link className="btn btn-info" to="/jobs">
+            Browse all jobs
+          </Link>
+        </p>
       </div>
-
-      <br />
-      <br />
-      <p className="text-center">
-        <Link className="btn btn-info" to="/jobs">
-          Browse all jobs
-        </Link>
-      </p>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default RecentJobs;

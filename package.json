@@ -26,9 +26,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "dev": "run-p -l start db:fake",
-    "db:fake": "json-server --watch db.json --routes routes.json --port 3004"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

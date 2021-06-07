@@ -6,7 +6,7 @@ const AppStateContext = React.createContext();
 const AppDispatchContext = React.createContext();
 
 const initialState = {
-  jobDetail: {},
+  jobDetail: null,
   jobs: [],
   user: {},
   isLoading: true,

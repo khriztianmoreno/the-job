@@ -8,10 +8,12 @@ import {
 } from '@fortawesome/fontawesome-free-solid';
 
 import useForm from '../../../hooks/useForm';
-import { registerAccount } from '../../../services/auth.services';
+import { registerNewAccount } from '../../../context/actions';
+import { useAppDispatch } from '../../../context/store';
 
 const FormRegister = () => {
   const { form, handleChange } = useForm({});
+  const dispatch = useAppDispatch();
   const history = useHistory();
 
   const handleSubmit = async evt => {
@@ -23,12 +25,8 @@ const FormRegister = () => {
     };
 
     try {
-      const userRegistered = await registerAccount(newUser);
+      await registerNewAccount(dispatch, newUser);
 
-      delete userRegistered.password;
-
-      // KEY localstorage : MyApp
-      localStorage.setItem('THE_JOB_APP', JSON.stringify(userRegistered));
       // Redirect to home
       history.push('/');
     } catch (error) {
